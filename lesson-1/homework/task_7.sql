@@ -1,0 +1,10 @@
+CREATE TABLE invoice (
+    invoice_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    amount DECIMAL
+);
+
+INSERT INTO invoice (amount) VALUES (100.50), (200.75), (300.00), (150.25), (275.00);
+
+SET IDENTITY_INSERT invoice ON;
+INSERT INTO invoice (invoice_id, amount) VALUES (100, 500.00);
+SET IDENTITY_INSERT invoice OFF;
